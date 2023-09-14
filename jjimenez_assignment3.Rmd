@@ -1,0 +1,95 @@
+---
+title: 'Data 605 Homework #3'
+author: "Jean Jimenez"
+date: "2023-09-13"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Assignment 3
+
+## Problem Set 1
+
+### #1
+
+What is the rank of the matrix A?
+
+[1 2 3 4]
+
+[-1 0 1 3]
+
+A=
+
+[0 1 -2 1]
+
+[5 4 -2 -3]
+
+To solve this problem, I inserted matrix A into R and used the rankMatrix() function
+
+```{r}
+#what is the rank of matrix A?
+
+library(Matrix)
+A=matrix(c(1,2,3,4,-1,0,1,3),nrow=4,ncol=4)
+
+rank_A=rankMatrix(A)
+rank_A
+```
+
+#### Answer
+
+**The rank of matrix A is 2**
+
+### #2
+
+The maximum rank of a mxn matrix is n because rank is defined by the dimensions of column and row space. It cannot be more than n. The minimum rank of a non-zero matrix is 1 because it will at least have 1 row.
+
+### #3
+
+What is the rank of matrix B?
+
+[1 2 1]
+
+B= [3 6 3 ]
+
+[2 4 2]
+
+To solve this problem, I inserted matrix B into R and again used the rankMatrix() function.
+
+```{r}
+B=matrix(c(1,2,1,3,6,3,2,4,2),ncol=3, nrow=3)
+rank_B=rankMatrix(B)
+rank_B
+```
+
+#### Answer
+
+The rank of matrix B is 1.
+
+## Problem Set 2
+
+Compute the convectors and eigenvalues of the given matrix.
+
+For this question, I did the computation manually. Below is my work:
+
+![](hw3%20problem%20set%202%20(1).jpg)
+
+![](hw3%20problem%20set%202%20(2).jpg)
+
+![](hw3%20problem%20set%202%20(3).jpg)
+
+I will check my work with R below:
+
+```{r}
+
+D=matrix(c(1,2,3,0,4,5,0,0,6), nrow=3, ncol=3)
+
+eigen(D)
+```
+
+My eigenvalues and eigenvectors match.
